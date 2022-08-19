@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05</title>
+    <style>
+        *{
+            margin: 0;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        div{
+            width: 50%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #87cefa;
+            border-radius: 10px;
+        }
+
+        .genero{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            font-size: 16pt;
+            height: 20%;
+        }
+
+        .genero > input{
+            margin: 10px;
+            padding: 10px;
+            outline: none;
+        }
+
+        div > button{
+            width: 15%;
+            margin-top: 25px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            padding: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        p{
+            margin: 15px;
+            font-size: 18pt;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h2>Qual seu gênero: Digite F para Feminino e M para masculino</h2>
+        <div class="genero">
+            <input type="text" id="genero">
+        </div>    
+        <button id="btn">Enviar</button>
+        <p id="paragrafo"></p>
+    </div>
+
+    <script>
+        const btn = document.getElementById('btn').addEventListener('click', verificarGenero)
+
+        function verificarGenero(){
+            let genero = document.getElementById('genero').value
+            
+            if(genero == 'F' || genero == 'M'){
+                const msg = genero == 'F' ? "Feminino" : "Masculino"
+                let p = document.getElementById('paragrafo').innerHTML = (msg)
+            } else{
+                p = document.getElementById('paragrafo').innerHTML = "Por favor, digite apenas F ou M."
+            } 
+        }
+    </script>
+</body>
+</html>

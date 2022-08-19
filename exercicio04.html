@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+    <style>
+        *{
+            margin: 0;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        div{
+            width: 50%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #87cefa;
+            border-radius: 10px;
+        }
+
+        div > label{
+            font-size: 18pt;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .turnos{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            font-size: 16pt;
+            height: 20%;
+        }
+
+        .turnos > input{
+            margin: 10px;
+            padding: 10px;
+            outline: none;
+        }
+
+        div > button{
+            width: 15%;
+            margin-top: 25px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            padding: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        p{
+            margin: 15px;
+            font-size: 18pt;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="turno">Em qual turno você estuda? <br>
+        Digite M para matutino <br>
+        Digite V para vespertino <br>
+        Digite N para noturno</label>
+        <div class="turnos">
+            <input type="text" name="turno" id="turno">
+        </div>
+        <button id="btn">Enviar</button>
+        <p id="paragrafo"></p>
+    </div>
+
+    <script>
+        const btn = document.getElementById('btn').addEventListener('click', enviar)
+        
+        function enviar(){
+            const turno = document.getElementById('turno').value
+            let p = document.getElementById('paragrafo')
+
+            switch(turno){
+                case 'M' :
+                    p.innerHTML = 'Bom dia'
+                break;
+                case 'm' :
+                    p.innerHTML = 'Bom dia'
+                break;
+                case 'V':
+                    p.innerHTML = 'Boa tarde'
+                break;
+                case 'v':
+                    p.innerHTML = 'Boa tarde'
+                break;
+                case 'N':
+                    p.innerHTML = 'Boa noite'
+                break;
+                case 'n':
+                    p.innerHTML = 'Boa noite'
+                break;
+                default :
+                    p.innerHTML = 'Opção inválida'
+            }
+        }
+
+    </script>
+</body>
+</html>

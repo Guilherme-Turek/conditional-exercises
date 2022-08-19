@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+    <style>
+        *{
+            margin: 0;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        div{
+            width: 50%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #87cefa;
+            border-radius: 10px;
+        }
+
+        div > label{
+            font-size: 18pt;
+            margin-bottom: 25px;
+        }
+
+        div > input{
+            margin: 15px;
+            padding: 10px;
+            width: 30%;
+            font-size: 14pt;
+            border: none;
+            outline: none;
+        }
+
+        div > button{
+            width: 15%;
+            margin-top: 25px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            padding: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        p{
+            margin: 15px;
+            font-size: 18pt;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="salario">Digite seu sálario: </label>
+        <input type="number" name="salario" id="salario" placeholder="Digite seu salário">
+        <button id="btn">Enviar</button>
+        <p id="paragrafo"></p>
+    </div>
+
+    <script>
+        let btn = document.getElementById('btn').addEventListener('click', verificar)
+        
+        function verificar(){
+        let salario = document.querySelector("#salario").value;
+         
+            if(salario < 1903.98){
+                let p = document.getElementById('paragrafo').innerHTML = 'Isento de IR'
+            } else {
+                let p = document.getElementById('paragrafo').innerHTML = 'Tributado no IR'
+            }
+        }
+    </script>
+</body>
+</html>
