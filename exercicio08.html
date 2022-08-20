@@ -55,23 +55,41 @@
             cursor: pointer;
         }
 
-        p{
+        .p{
             margin: 15px;
-            font-size: 18pt;
+            font-size: 10pt;
+            display: flex;
+            flex-direction: column;
         }
     </style>
 </head>
 <body>
     <div>
-        <label for="numero">Digite um número: </label>
+        <label for="numero">Digite um número entre 1 e 10: </label>
         <input type="number" name="numero" id="numero">
         <button id="btn">Enviar</button>
-        <p id="paragrafo"></p>
+        <div class="p">
+            <p id="paragrafo"></p>
+        </div>
+        
     </div>
 
     <script>
-        let btn = document.getElementById('btn').addEventListener('click')
+        let btn = document.getElementById('btn').addEventListener('click', tabuada())
         
+        function tabuada(){
+            number = document.getElementById('numero').value
+            let p = document.getElementById('paragrafo')
+
+            if(number >= 1 && number <= 10){
+                for(let cont = 1; cont <= 10; cont++){
+                    let resultado = cont * number
+                    p.appendChild(document.createTextNode(`${number} x ${cont} = ${resultado} `))
+                }
+            }else{
+                p.innerHTML = "Digite um número entre 1 e 10"
+            }
+        }
     </script>
 </body>
 </html>
