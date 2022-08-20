@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 09</title>
+    <style>
+        *{
+            margin: 0;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        div{
+            width: 50%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #87cefa;
+            border-radius: 10px;
+        }
+
+        div > h2{
+            font-size: 18pt;
+            margin-bottom: 25px;
+        }
+
+        div > button{
+            width: 15%;
+            margin-top: 25px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            padding: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        p{
+            margin: 15px;
+            font-size: 18pt;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Clique para descobrir a média aritmética dos números entre 13 e 73</h3>
+        <button id="btn">Descobrir</button>
+        <p id="paragrafo"></p>
+    </div>
+
+    <script>
+        const btn = document.querySelector('#btn').addEventListener('click', calcular);
+        let p = document.getElementById('paragrafo')
+
+        function calcular(){
+            let soma = 0
+
+            for(let cont = 13; cont <= 73; cont++){
+                soma += cont 
+               
+            }
+                let mediaAritmetica = soma / 60
+                p.innerHTML = `A média aritmética dos números entre 13 e 73 é ${mediaAritmetica.toFixed(2)}`
+        }
+
+    </script>
+</body>
+</html>
